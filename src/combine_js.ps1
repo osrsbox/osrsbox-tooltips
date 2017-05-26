@@ -1,0 +1,1 @@
+cat jquery-3.2.1.min.js, jquery-ui.js, additions.js | sc osrsbox-tooltips.js

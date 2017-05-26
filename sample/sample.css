@@ -1,0 +1,16 @@
+/* ITEMBLOCK TO DISPLAY ROWS OF ITEM IMAGES */
+.item-block {
+	clear: both;
+	position: relative;
+	display: table;
+	max-width: 450px;
+	margin: 0 auto;
+	padding: 5px 0 5px 0;
+	background-color: white;
+}
+
+/* TOOLTIP CONFIGURATION */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}

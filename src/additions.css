@@ -1,0 +1,78 @@
+@font-face {
+    font-family: osrs-font;
+    src: url(osrs-font.woff);
+}
+
+/* Override some (global) default JQuery tooltip styles */
+.ui-tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ff981f;
+    font-family: osrs-font;
+    font-size: 10pt;
+    max-width: 2000px;
+}
+
+/* Pad the top of the tooltip */
+.ui-tooltip-content {
+    padding: 10px;
+}
+
+/* The class to hold an OSRS BOX tooltip */
+.osrs-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Control layout of top item image */
+.osrs-tooltip-image {
+    float: left;
+    padding: 0 5px 5px 0;
+}
+
+/* Control layout of top item name (e.g., Abysall Whip) */
+.osrs-tooltip-name {
+    float: right;
+    font-size: 13pt;
+    padding: 5px 0 0 0;
+}
+
+/* Clear previous float layouts */
+.osrs-tooltip-clear {
+    clear: both;
+}
+
+/* Control layout of text properties (e.g., Stackable, Tradeable) */
+.osrs-tooltip-textleft {
+    float: left;
+}
+
+/* Control layout of text propertie value (e.g., Yes, No, Price etc.) */
+.osrs-tooltip-textright {
+    float: right;
+}
+
+/* Control layout of the item stats table */
+.osrs-tooltip-table {
+    font-style: normal;
+    font-size: 11pt;
+    text-align:center;	
+    border-collapse: collapse;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 10px;
+}
+
+/* Control layout of the item stats table HEADERS */
+.osrs-tooltip-table th {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* Control layout of the item stats table BORDERS */
+.osrs-tooltip-table table, th, td {
+    border: 1px solid #ff981f;
+    filter: alpha(opacity=40); 
+}
+
+/* Do not display the UI Helper */
+.ui-helper-hidden-accessible { display:none; }
