@@ -1,6 +1,6 @@
 @font-face {
     font-family: osrs-font;
-    src: url(osrs-font.woff);
+    src: url(http://osrsbox.com/osrsbox-tooltips/osrs-font.woff);
 }
 
 /* Override some (global) default JQuery tooltip styles */
