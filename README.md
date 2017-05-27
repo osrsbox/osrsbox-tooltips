@@ -12,7 +12,7 @@ The OSRS tooltip library provide default support for providing tooltips to:
 
 The image below shows an example of tooltips for the Rune platebody (g) and the Rune platelegs (g). The first tooltip is hoverable text. You will notice the unique style of the link, with a gold colour and surrounded by [square brackets]. This makes it easy to distinguish text items with tooltips. The second tooltip is a hoverable image. This method does not include any identifiable design to state whether it is a tooltip - however, should be used when there is no room to include any text.
 
-![Sample of OSRS tooltips when user hovers over image of an OSRS item](docs\sample_img.png)
+![Sample of OSRS tooltips when user hovers over image of an OSRS item](docs/sample_img.png)
 
 ## Usage Example
 
@@ -93,6 +93,8 @@ Code includes a hoverable text in the form of an item name, as well as a hoverab
 ```
 
 # TODO
+
+Add summary of each file (.js and .css)
 
 Cover connection to RESTful API
 
