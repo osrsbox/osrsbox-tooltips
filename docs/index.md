@@ -10,18 +10,20 @@ This repository is a library for creating Old School RuneScape (OSRS) tooltips t
 
 ## OSRS Tooltip Example
 
-<div class="tooltip">
-		<span class="osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
-</div><!-- /.tooltip -->
-
-The OSRS tooltip library provide default support for providing tooltips to:
+The OSRS tooltip library provides default support for tooltips in:
 
 1. Text: usually item names
 2. Images: usually a thumbnail picture on an image
 
 The image below shows an example of tooltips for the Rune platebody (g) and the Rune platelegs (g). The first tooltip is hoverable text. You will notice the unique style of the link, with a gold colour and surrounded by [square brackets]. This makes it easy to distinguish text items with tooltips. The second tooltip is a hoverable image. This method does not include any identifiable design to state whether it is a tooltip - however, should be used when there is no room to include any text.
 
-![Sample of OSRS tooltips when user hovers over image of an OSRS item](sample_img.png)
+<div class="tooltip">
+		<span class="osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
+/div>
+
+<div class="tooltip">
+    <span class="osrs-tooltip" id='2617' title='Please wait ...'><img class="" height="32" width="32" src="http://osrsbox.com/osrsbox-db/items-icons/2/2617.png"></span>
+</div>
 
 ## Usage Example
 
@@ -111,5 +113,5 @@ Link to projects using OSRS tooltips
 
 Summary of license information and reuse
 
-<span id="forkongithub"><a href="https://github.com/codepo8/css-fork-on-github-ribbon">Fork me on GitHub</a></span>
+<span id="forkongithub"><a href="https://github.com/osrsbox/osrsbox-tooltips">Fork me on GitHub</a></span>
 
