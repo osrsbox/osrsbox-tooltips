@@ -76,3 +76,8 @@
 
 /* Do not display the UI Helper */
 .ui-helper-hidden-accessible { display:none; }
+
+.osrs-tooltip {
+    font-style: bold;
+    color: #ff981f;
+}
