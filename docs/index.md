@@ -6,22 +6,14 @@ title: OSRSBox | osrsbox-tooltips | An Old School Runescape (OSRS) Tooltip libra
 # osrsbox-tooltips
 ## An Old School Runescape (OSRS) Tooltip library
 
-This repository is a library for creating Old School RuneScape (OSRS) tooltips to enhance user experience on fan websites. The repository hosts the files necessary to implement OSRS tooltips on web pages. The project is based on World of Warcraft (WOW) tooltips - primarily the [WOWhead tooltips](http://www.wowhead.com/tooltips) that are used on the WOWhead website and other WOW fan sites. You can see a more thorough working demo of WOWhead tootips [here](http://wow.zamimg.com/widgets/power/demo.html).
+This repository is a library for creating Old School RuneScape (OSRS) tooltips to enhance user experience on fan websites. The repository hosts the files necessary to implement OSRS tooltips on web pages. For example, check out the lovely <span class="osrs-tooltip" id='6920' title='Please wait ...'>[Infinity boots]</span> and their stats! The project is based on World of Warcraft (WOW) tooltips - primarily the [WOWhead tooltips](http://www.wowhead.com/tooltips) that are used on the WOWhead website and other WOW fan sites. You can see a more thorough working demo of WOWhead tootips [here](http://wow.zamimg.com/widgets/power/demo.html).
 
-## OSRS Tooltip Example
+## Usage Example
 
 The OSRS tooltip library provides default support for tooltips in:
 
 1. Text: usually item names
 2. Images: usually a thumbnail picture on an image
-
-The image below shows an example of tooltips for the Rune platebody (g) and the Rune platelegs (g). The first tooltip is hoverable text. You will notice the unique style of the link, with a gold colour and surrounded by [square brackets]. This makes it easy to distinguish text items with tooltips. The second tooltip is a hoverable image. This method does not include any identifiable design to state whether it is a tooltip - however, should be used when there is no room to include any text.
-
-<div class="tooltip">
-<span class="osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
-</div>
-
-## Usage Example
 
 OSRS tooltips are pretty simple to use. The process requires two main additions to your web page: 1) Including the JavaScript and CSS code in your web page header; and 2) Including an HTML in your web page body to display a text or image which is used to display the actual tooltip when hovered.
 
