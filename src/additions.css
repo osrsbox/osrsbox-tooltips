@@ -20,7 +20,7 @@
 /* The class to hold an OSRS BOX tooltip */
 .osrs-tooltip {
     position: relative;
-    display: inline-block;
+    float: left;
 }
 
 /* Control layout of top item image */
