@@ -8,7 +8,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     color: #ff981f;
     font-family: osrs-font;
-    font-size: 10pt;
+    font-size: 1em;
     max-width: 2000px;
 }
 
@@ -32,7 +32,7 @@
 /* Control layout of top item name (e.g., Abysall Whip) */
 .osrs-tooltip-name {
     float: right;
-    font-size: 13pt;
+    font-size: 1.1em;
     padding: 5px 0 0 0;
 }
 
@@ -54,7 +54,7 @@
 /* Control layout of the item stats table */
 .osrs-tooltip-table {
     font-style: normal;
-    font-size: 11pt;
+    font-size: 1em;
     text-align:center;	
     border-collapse: collapse;
     margin-left:auto; 
@@ -65,7 +65,7 @@
 /* Control layout of the item stats table HEADERS */
 .osrs-tooltip-table th {
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1.1em;
 }
 
 /* Control layout of the item stats table BORDERS */

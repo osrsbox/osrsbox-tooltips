@@ -31,4 +31,4 @@ $file = Get-Content .\osrsbox-tooltips.css
 Set-Content .\osrsbox-tooltips.css –value $header, $file
 
 # Move final file to parent directory
-Move-Item -Path .\osrsbox-tooltips.css -Destination ..\.\osrsbox-tooltips.css -force
+Move-Item -Path .\osrsbox-tooltips.css -Destination ..\docs\.\osrsbox-tooltips.css -force
