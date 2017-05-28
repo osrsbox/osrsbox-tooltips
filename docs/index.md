@@ -21,10 +21,6 @@ The image below shows an example of tooltips for the Rune platebody (g) and the 
 <span class="osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
 </div>
 
-<div class="tooltip">
-<span class="osrs-tooltip" id='2617' title='Please wait ...'><img class="" height="32" width="32" src="http://osrsbox.com/osrsbox-db/items-icons/2/2617.png"></span>
-</div>
-
 ## Usage Example
 
 OSRS tooltips are pretty simple to use. The process requires two main additions to your web page: 1) Including the JavaScript and CSS code in your web page header; and 2) Including an HTML in your web page body to display a text or image which is used to display the actual tooltip when hovered.
@@ -33,18 +29,21 @@ OSRS tooltips are pretty simple to use. The process requires two main additions 
 
 The JavaScript code (osrsbox-tooltips.js) needs to be included the HTML source code header for the web page when you want to use OSRS tooltips.
 
+{: .code-box}
 ``` html
 <script type="text/javascript" src="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.js"></script>
 ```
 
 The CSS style code (osrsbox-tooltips.css) also needs to be included the HTML source code header for the web page when you want to use OSRS tooltips.
 
+{: .code-box}
 ```html
 <link rel="stylesheet" type="text/css" href="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.css">
 ```
 
 The following code provides a full working example of a header with links to the the JavaScript and CSS files hosted on osrsbox.com:
 
+{: .code-box}
 ```html
 <head>
 	<link rel="stylesheet" type="text/css" href="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.css">
@@ -63,6 +62,7 @@ Some code below indicates the use of each method of displaying OSRS tooltips.
 
 Text example:
 
+{: .code-box}
 ```html
 <div class="tooltip">
 	<span class="osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
@@ -70,6 +70,7 @@ Text example:
 ```
 Image example:
 
+{: .code-box}
 ``` html
 <div class="tooltip">
 	<span class="osrs-tooltip" id='2617' title='Please wait ...'><img class="" height="32" width="32" src="http://osrsbox.com/osrsbox-db/items-icons/2/2617.png"></span>
@@ -82,6 +83,7 @@ Sometimes code snippets can be difficult to understand or implement. Therefore, 
 
 Code includes a hoverable text in the form of an item name, as well as a hoverable thumbnail image example. 
 
+{: .code-box}
 ```html
 <!DOCTYPE html>
 <html>
