@@ -6,7 +6,9 @@ title: OSRSBox | osrsbox-tooltips | An Old School Runescape (OSRS) Tooltip libra
 # osrsbox-tooltips
 ## An Old School Runescape (OSRS) Tooltip library
 
-This repository is a library for creating Old School RuneScape (OSRS) tooltips to enhance user experience on fan websites. The repository hosts the files necessary to implement OSRS tooltips on web pages. For example, check out the lovely <span class="tooltip osrs-tooltip" id='6920' title='Please wait ...'>[Infinity boots]</span> and their stats! The project is based on World of Warcraft (WOW) tooltips - primarily the [WOWhead tooltips](http://www.wowhead.com/tooltips) that are used on the WOWhead website and other WOW fan sites. You can see a more thorough working demo of WOWhead tootips [here](http://wow.zamimg.com/widgets/power/demo.html).
+This repository is a library for creating Old School RuneScape (OSRS) tooltips to enhance user experience on fan websites. The repository hosts the files necessary to implement OSRS tooltips on web pages. For example, check out the lovely <span class="tooltip osrs-tooltip" id='6920' title='Please wait ...'>[Infinity boots]</span> and their stats! Maybe you are rich and melee focussed, so the <span class="tooltip osrs-tooltip" id='13239' title='Please wait ...'>[Primordial boots]</span> would be a better choice!
+
+The project is based on World of Warcraft (WOW) tooltips - primarily the [WOWhead tooltips](http://www.wowhead.com/tooltips) that are used on the WOWhead website and other WOW fan sites. You can see a more thorough working demo of WOWhead tootips [here](http://wow.zamimg.com/widgets/power/demo.html).
 
 ## Usage Example
 
@@ -38,8 +40,8 @@ The following code provides a full working example of a header with links to the
 {: .code-box}
 ```html
 <head>
-	<link rel="stylesheet" type="text/css" href="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.css">
-	<script type="text/javascript" src="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.css">
+  <script type="text/javascript" src="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.js"></script>
 </head>
 ```
 
@@ -56,17 +58,13 @@ Text example:
 
 {: .code-box}
 ```html
-<div class="tooltip">
-	<span class="osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
-</div><!-- /.tooltip -->
+<span class="tooltip osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
 ```
 Image example:
 
 {: .code-box}
 ``` html
-<div class="tooltip">
-	<span class="osrs-tooltip" id='2617' title='Please wait ...'><img class="" height="32" width="32" src="http://osrsbox.com/osrsbox-db/items-icons/2/2617.png"></span>
-</div><!-- /.tooltip -->
+<span class="tooltip osrs-tooltip" id='2617' title='Please wait ...'><img class="" height="32" width="32" src="http://osrsbox.com/osrsbox-db/items-icons/2/2617.png"></span>
 ```
 
 ### Full working example
@@ -80,19 +78,15 @@ Code includes a hoverable text in the form of an item name, as well as a hoverab
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OSRSBOX | Simple HTML Example using OSRS Tooltips by PH01L</title>
-    <!-- External links to osrsbox-tooltip library (JS and CSS) -->
-	<link href="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.css" rel="stylesheet" type="text/css">
-	<script src="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.js" type="text/javascript">
-	</script>
+  <title>OSRSBOX | Simple HTML Example using OSRS Tooltips by PH01L</title>
+  <!-- External links to osrsbox-tooltip library (JS and CSS) -->
+  <link href="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.css" rel="stylesheet" type="text/css">
+  <script src="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.js" type="text/javascript">
+  </script>
 </head>
 <body>
-    <div class="tooltip">
-		<span class="osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
-	</div><!-- /.tooltip -->
-	<div class="tooltip">
-		<span class="osrs-tooltip" id='2617' title='Please wait ...'><img class="" height="32" width="32" src="http://osrsbox.com/osrsbox-db/items-icons/2/2617.png"></span>
-	</div><!-- /.tooltip -->
+  <span class="tooltip osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
+  <span class="tooltip osrs-tooltip" id='2617' title='Please wait ...'><img class="" height="32" width="32" src="http://osrsbox.com/osrsbox-db/items-icons/2/2617.png"></span>
 </body>
 </html>
 ```
