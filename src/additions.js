@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $( document ).tooltip(); // initialize tooltip
 
-    $( ".tooltip span" ).tooltip({
+    $( ".tooltip" ).tooltip({
         track:true,
         open: function( event, ui ) {
               var item_id = this.id;
@@ -20,7 +20,7 @@ $(document).ready(function(){
         }
     });
 
-    $(".tooltip span").mouseout(function(){
+    $(".tooltip").mouseout(function(){
         // re-initializing tooltip
         $(this).attr('title','Please wait...');
         $(this).tooltip();
