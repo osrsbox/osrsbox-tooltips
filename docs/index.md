@@ -113,5 +113,7 @@ Link to projects using OSRS tooltips
 
 Summary of license information and reuse
 
+Project feedback and contribution
+
 <span id="forkongithub"><a href="https://github.com/osrsbox/osrsbox-tooltips">Fork me on GitHub</a></span>
 
