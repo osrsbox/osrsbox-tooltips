@@ -6,7 +6,7 @@ title: OSRSBox | osrsbox-tooltips | An Old School Runescape (OSRS) Tooltip libra
 # osrsbox-tooltips
 ## An Old School Runescape (OSRS) Tooltip library
 
-This repository is a library for creating Old School RuneScape (OSRS) tooltips to enhance user experience on fan websites. The repository hosts the files necessary to implement OSRS tooltips on web pages. For example, check out the lovely <span class="osrs-tooltip" id='6920' title='Please wait ...'>[Infinity boots]</span> and their stats! The project is based on World of Warcraft (WOW) tooltips - primarily the [WOWhead tooltips](http://www.wowhead.com/tooltips) that are used on the WOWhead website and other WOW fan sites. You can see a more thorough working demo of WOWhead tootips [here](http://wow.zamimg.com/widgets/power/demo.html).
+This repository is a library for creating Old School RuneScape (OSRS) tooltips to enhance user experience on fan websites. The repository hosts the files necessary to implement OSRS tooltips on web pages. For example, check out the lovely <span class="tooltip osrs-tooltip" id='6920' title='Please wait ...'>[Infinity boots]</span> and their stats! The project is based on World of Warcraft (WOW) tooltips - primarily the [WOWhead tooltips](http://www.wowhead.com/tooltips) that are used on the WOWhead website and other WOW fan sites. You can see a more thorough working demo of WOWhead tootips [here](http://wow.zamimg.com/widgets/power/demo.html).
 
 ## Usage Example
 
