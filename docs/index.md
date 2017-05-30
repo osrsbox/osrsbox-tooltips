@@ -6,18 +6,33 @@ title: OSRSBox | osrsbox-tooltips | An Old School Runescape (OSRS) Tooltip libra
 # osrsbox-tooltips
 ## An Old School Runescape (OSRS) Tooltip library
 
-This repository is a library for creating Old School RuneScape (OSRS) tooltips to enhance user experience on fan websites. The repository hosts the files necessary to implement OSRS tooltips on web pages. For example, check out the lovely <span class="tooltip osrs-tooltip" id='6920' title='Please wait ...'>[Infinity boots]</span> and their stats! Maybe you are rich and melee focussed, so the <span class="tooltip osrs-tooltip" id='13239' title='Please wait ...'>[Primordial boots]</span> would be a better choice!
+This repository is a library for creating Old School RuneScape (OSRS) tooltips to enhance user experience on fan websites. The repository hosts the files necessary to implement OSRS tooltips on web pages. For example, check out the lovely <span class="tooltip osrs-tooltip" id='6920' title='Please wait ...'>[Infinity boots]</span> and their stats! Maybe you are rich and melee focussed, so the <span class="tooltip osrs-tooltip" id='13239' title='Please wait ...'>[Primordial boots]</span> would be a better choice! With those boots and no cash stack left, you might be forced to eat <span class="tooltip osrs-tooltip" id='379' title='Please wait ...'>[Lobster]</span>.
 
 The project is based on World of Warcraft (WOW) tooltips - primarily the [WOWhead tooltips](http://www.wowhead.com/tooltips) that are used on the WOWhead website and other WOW fan sites. You can see a more thorough working demo of WOWhead tootips [here](http://wow.zamimg.com/widgets/power/demo.html).
 
-## Usage Example
+## Quick Start
 
-The OSRS tooltip library provides default support for tooltips in:
+Inlcude JavaScript and CSS library files in your web page header:
 
-1. Text: usually item names
-2. Images: usually a thumbnail picture on an image
+{: .code-box}
+```html
+<head>
+  <link rel="stylesheet" type="text/css" href="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.css">
+  <script type="text/javascript" src="http://osrsbox.com/osrsbox-tooltips/osrsbox-tooltips.js"></script>
+</head>
+```
+Include a span element in your the web page body. The example below will create a tooltip for the <span class="tooltip osrs-tooltip" id='11806' title='Please wait ...'>[Saradomin godsword]</span> on your page.
 
-OSRS tooltips are pretty simple to use. The process requires two main additions to your web page: 1) Including the JavaScript and CSS code in your web page header; and 2) Including an HTML in your web page body to display a text or image which is used to display the actual tooltip when hovered.
+{: .code-box}
+```html
+<span class="tooltip osrs-tooltip" id='11806' title='Please wait ...'>[Saradomin godsword]</span>
+```
+
+The only modification you need to make is: 1) The item text name; and 2) The OSRS item ID number. You can find a [master list of OSRS item ID numbers](http://osrsbox.com/osrsbox-db/OSRS-ItemIDS.txt) on my OSRS DB project site.
+
+## Detailed Usage Guide with Examples
+
+The OSRS tooltip library provides support for tooltips on your web page. OSRS tooltips are pretty simple to use. The process requires two main additions to your web page: 1) Including the JavaScript and CSS code in your web page header; and 2) Including an HTML in your web page body to display a text or image which is used to display the actual tooltip when hovered. In addition, 
 
 ### 1) Include JavaScript and CSS style sheet in the web page header
 
@@ -47,12 +62,7 @@ The following code provides a full working example of a header with links to the
 
 ### 2) Include HTML element to show tooltip
 
-Once the OSRS tooltip library has been included in the header we can create HTML elements which have tooltips when a user hovers their mouse over the element. The OSRS tooltip library provide default support for providing tooltips to:
-
-1. Text: usually item names
-2. Images: usually a thumbnail picture on an image
-
-Some code below indicates the use of each method of displaying OSRS tooltips.
+Once the OSRS tooltip library has been included in the header we can create HTML elements which have tooltips when a user hovers their mouse over the element. The OSRS tooltip library is included using HTML span elements, so can be included anywhere. Common techniques include displaying text - usually item names. You could also have a thumbnail image with a tooltip. Some code below indicates the use of each method.
 
 Text example:
 
@@ -60,6 +70,7 @@ Text example:
 ```html
 <span class="tooltip osrs-tooltip" id='2615' title='Please wait ...'>[Rune platebody (g)]</span>
 ```
+
 Image example:
 
 {: .code-box}
@@ -91,17 +102,19 @@ Code includes a hoverable text in the form of an item name, as well as a hoverab
 </html>
 ```
 
-# TODO
+## Documentation to finish
 
-Add summary of each file (.js and .css)
++ Cover connection to RESTful API
++ Link to projects using OSRS tooltips
++ Summary of license information and reuse
 
-Cover connection to RESTful API
+##Project feedback and contribution
 
-Link to projects using OSRS tooltips
+This is an independant project (thus far). However, I would thoroughly appreciate any feedback regarding the project. The best method is to post an appropriate Github issue with a feature request or bug. 
 
-Summary of license information and reuse
+## Project goal list
 
-Project feedback and contribution
++ Include support for non-equipable items in tooltips
++ Categorise tooltips: maybe based on additional information that could be displayed. Examples include farming supplies, better potions with doses information, edible items with healing etc.
 
 <span id="forkongithub"><a href="https://github.com/osrsbox/osrsbox-tooltips">Fork me on GitHub</a></span>
-
