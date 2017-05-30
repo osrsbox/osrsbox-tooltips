@@ -62,13 +62,8 @@
 }
 
 /* Control layout of the item stats table HEADERS */
-.osrs-tooltip-table th {
-    font-weight: normal;
-    font-size: 1.1em;
-}
-
-/* Control layout of the item stats table BORDERS */
-.osrs-tooltip-table table, th, td {
+table.osrs-tooltip-table th,
+table.osrs-tooltip-table td {
     border: 1px solid #ff981f;
     filter: alpha(opacity=40); 
 }
