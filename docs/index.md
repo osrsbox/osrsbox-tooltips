@@ -108,7 +108,7 @@ Code includes a hoverable text in the form of an item name, as well as a hoverab
 + Link to projects using OSRS tooltips
 + Summary of license information and reuse
 
-##Project feedback and contribution
+## Project feedback and contribution
 
 This is an independant project (thus far). However, I would thoroughly appreciate any feedback regarding the project. The best method is to post an appropriate Github issue with a feature request or bug. 
 
