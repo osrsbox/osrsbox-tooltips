@@ -17,11 +17,6 @@
     padding: 10px;
 }
 
-/* The class to hold an OSRS BOX tooltip */
-.osrs-tooltip {
-    /* float: left; */
-}
-
 /* Control layout of top item image */
 .osrs-tooltip-image {
     float: left;
@@ -65,7 +60,11 @@
 table.osrs-tooltip-table th,
 table.osrs-tooltip-table td {
     border: 1px solid #ff981f;
-    filter: alpha(opacity=40); 
+    filter: alpha(opacity=40);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ff981f;
+    text-align: center;
+    padding: 2px;
 }
 
 /* Do not display the UI Helper */
