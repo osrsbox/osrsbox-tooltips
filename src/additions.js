@@ -49,7 +49,7 @@ function successFunction(data) {
     var properties = "<span class='osrs-tooltip-textleft'>High Alchemy : </span><span class='osrs-tooltip-textright'>" +  data["high_alch"] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Low Alchemy : </span><span class='osrs-tooltip-textright'>" + data["low_alch"] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Members Item : </span><span class='osrs-tooltip-textright'>" + intToString(data['members_only']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Quest Item : </span><span class='osrs-tooltip-textright'>" + intToString(data['quest_item']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Stackable : </span><span class='osrs-tooltip-textright'>" + intToString(data['stackable']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Equipable : </span><span class='osrs-tooltip-textright'>" + intToString(data['equipable']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Tradeable : </span><span class='osrs-tooltip-textright'>" + intToString(data['tradeable']) + "</span><br/>";
 
     if (data['equipable'] == 0) {
-        theContent = "<div>" + header + clear + properties + "</div>";
+        theContent = "<div>" + header + clear + properties + clear + "</div>";
         $("#" + data["id"]).tooltip('option', 'content', theContent);
         return
     }    
