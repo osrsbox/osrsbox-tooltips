@@ -9,7 +9,8 @@
     color: #ff981f;
     font-family: osrs-font;
     font-size: 1em;
-    max-width: 2000px;
+    max-width: 250px;
+    min-width: 150px;
 }
 
 /* Pad the top of the tooltip */
