@@ -6,7 +6,7 @@
 # Copy "yuicompressor-2.4.7.jar" to same folder as this script
 
 # Combine all CSS files to temp.css
-cat additions.css jquery-ui.css > temp.css
+cat jquery-ui.css additions.css > temp.css
 
 # Minify the temp.css file using YUI Compressor
 java -jar yuicompressor-2.4.7.jar temp.css -o temp2.css
