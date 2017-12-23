@@ -15,7 +15,7 @@ java -jar .\yuicompressor-2.4.7.jar .\temp.css -o .\osrsbox-tooltips.css
 Remove-Item .\temp.css
 
 # Static header for new CSS file
-$header = "/*! OSRSBOX Tooltips
+$header = "/* OSRSBOX Tooltips
 *   Date: 27/05/2017
 *   Author: PH01L
 *   Website: osrsbox.com
