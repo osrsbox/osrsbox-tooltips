@@ -72,6 +72,6 @@ table.osrs-tooltip-table td {
 .ui-helper-hidden-accessible { display:none; }
 
 .osrs-tooltip {
-    font-style: bold;
+    font-weight: bold;
     color: #ff981f;
 }

@@ -46,21 +46,21 @@ function successFunction(data) {
     var header = "<span class='osrs-tooltip-image'><img src=" + img_url + " alt=" + name + "></span><span class='osrs-tooltip-name'>" + name + "</span><br/>";
 
     // Construct tooltip content: item properties
-    var properties = "<span class='osrs-tooltip-textleft'>High Alchemy : </span><span class='osrs-tooltip-textright'>" +  data["high_alch"] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Low Alchemy : </span><span class='osrs-tooltip-textright'>" + data["low_alch"] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Members Item : </span><span class='osrs-tooltip-textright'>" + data['members_only'] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Quest Item : </span><span class='osrs-tooltip-textright'>" + data['quest_item'] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Stackable : </span><span class='osrs-tooltip-textright'>" + data['stackable'] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Equipable : </span><span class='osrs-tooltip-textright'>" + data['equipable'] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Tradeable : </span><span class='osrs-tooltip-textright'>" + data['tradeable'] + "</span><br/>";
+    var properties = "<span class='osrs-tooltip-textleft'>Members Item : </span><span class='osrs-tooltip-textright'>" + boolToString(data['members_only']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Quest Item : </span><span class='osrs-tooltip-textright'>" + boolToString(data['quest_item']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Stackable : </span><span class='osrs-tooltip-textright'>" + boolToString(data['stackable']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Equipable : </span><span class='osrs-tooltip-textright'>" + boolToString(data['equipable']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Tradeable : </span><span class='osrs-tooltip-textright'>" + boolToString(data['tradeable']) + "</span><br/>" + "<span class='osrs-tooltip-textleft'>High Alchemy : </span><span class='osrs-tooltip-textright'>" +  data["highalch"] + "</span><br/>" + "<span class='osrs-tooltip-textleft'>Low Alchemy : </span><span class='osrs-tooltip-textright'>" + data["lowalch"] + "</span><br/>";
 
-    if (data['equipable'] == true) {
+    if (data['equipable'] == false) {
         theContent = "<div>" + header + clear + properties + clear + "</div>";
         $("#" + data["id"]).tooltip('option', 'content', theContent);
         return
     }    
     
-    var attack = "<span class='textleft'>Stab : </span><span class='textright'>" +  data["attack_stab"] + "</span><br/>" + "<span class='textleft'>Slash : </span><span class='textright'>" +  data["attack_slash"] + "</span><br/>" + "<span class='textleft'>Crush : </span><span class='textright'>" + data["attack_crush"] + "</span><br/>" + "<span class='textleft'>Magic : </span><span class='textright'>" + data['attack_magic'] + "</span><br/>" + "<span class='textleft'>Ranged : </span><span class='textright'>" + data['attack_ranged'] + "</span><br/>"
+    var attack = "<span class='textleft'>Stab : </span><span class='textright'>" +  data["bonuses"]["attack_stab"] + "</span><br/>" + "<span class='textleft'>Slash : </span><span class='textright'>" +  data["bonuses"]["attack_slash"] + "</span><br/>" + "<span class='textleft'>Crush : </span><span class='textright'>" + data["bonuses"]["attack_crush"] + "</span><br/>" + "<span class='textleft'>Magic : </span><span class='textright'>" + data["bonuses"]['attack_magic'] + "</span><br/>" + "<span class='textleft'>Ranged : </span><span class='textright'>" + data["bonuses"]['attack_ranged'] + "</span><br/>"
 
-    var attack_table = "<table class='osrs-tooltip-table'><tr><th colspan='5'>Attack Bonus</th></tr><tr><td><img src='http://osrsbox.com/osrsbox-tooltips/images/stab.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/slash.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/crush.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/magic.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/ranged.png' alt=''></td></tr><tr><td>" + data['attack_stab'] + "</td>" + "<td>" + data['attack_slash'] + "</td>" + "<td>" + data['attack_crush'] + "</td>" + "<td>" + data['attack_magic'] + "</td>" + "<td>" + data['attack_ranged'] + "</td>" + "</tr>";
+    var attack_table = "<table class='osrs-tooltip-table'><tr><th colspan='5'>Attack Bonus</th></tr><tr><td><img src='http://osrsbox.com/osrsbox-tooltips/images/stab.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/slash.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/crush.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/magic.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/ranged.png' alt=''></td></tr><tr><td>" + data["bonuses"]['attack_stab'] + "</td>" + "<td>" + data["bonuses"]['attack_slash'] + "</td>" + "<td>" + data["bonuses"]['attack_crush'] + "</td>" + "<td>" + data["bonuses"]['attack_magic'] + "</td>" + "<td>" + data["bonuses"]['attack_ranged'] + "</td>" + "</tr>";
 
-    var defence_table = "<tr><th colspan='5'>Defence Bonus</th></tr><tr><td><img src='http://osrsbox.com/osrsbox-tooltips/images/stab.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/slash.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/crush.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/magic.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/ranged.png' alt=''></td></tr><tr><td>" + data['defence_stab'] + "</td>" + "<td>" + data['defence_slash'] + "</td>" + "<td>" + data['defence_crush'] + "</td>" + "<td>" + data['defence_magic'] + "</td>" + "<td>" + data['defence_ranged'] + "</td>" + "</tr>";
+    var defence_table = "<tr><th colspan='5'>Defence Bonus</th></tr><tr><td><img src='http://osrsbox.com/osrsbox-tooltips/images/stab.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/slash.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/crush.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/magic.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/ranged.png' alt=''></td></tr><tr><td>" + data["bonuses"]['defence_stab'] + "</td>" + "<td>" + data["bonuses"]['defence_slash'] + "</td>" + "<td>" + data["bonuses"]['defence_crush'] + "</td>" + "<td>" + data["bonuses"]['defence_magic'] + "</td>" + "<td>" + data["bonuses"]['defence_ranged'] + "</td>" + "</tr>";
 
-    var other_bonuses_table = "<tr><th colspan='4'>Other Bonuses</th></tr><tr><td><img src='http://osrsbox.com/osrsbox-tooltips/images/melee_strength.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/ranged_strength.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/magic_damage.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/prayer.png' alt=''></td></tr><tr><td>" + data['melee_strength'] + "</td>" + "<td>" + data['ranged_strength'] + "</td>" + "<td>" + data['magic_damage'] + "</td>" + "<td>" + data['prayer'] + "</td>" + "</tr></table>";  
+    var other_bonuses_table = "<tr><th colspan='4'>Other Bonuses</th></tr><tr><td><img src='http://osrsbox.com/osrsbox-tooltips/images/melee_strength.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/ranged_strength.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/magic_damage.png' alt=''></td><td><img src='http://osrsbox.com/osrsbox-tooltips/images/prayer.png' alt=''></td></tr><tr><td>" + data["bonuses"]['melee_strength'] + "</td>" + "<td>" + data["bonuses"]['ranged_strength'] + "</td>" + "<td>" + data["bonuses"]['magic_damage'] + "</td>" + "<td>" + data["bonuses"]['prayer'] + "</td>" + "</tr></table>";  
 
     theContent = "<div>" + header + clear + properties + clear + attack_table + defence_table + other_bonuses_table + "</div>";
     $("#" + data["id"]).tooltip('option', 'content', theContent)
@@ -70,11 +70,11 @@ function successFunction(data) {
         $("#" + data["id"]).tooltip('option', 'content', "Error getting content.")
     }      
 
-function intToString(booleanInt) {
-    if (booleanInt == 1) {
-        return "Yes"
+function boolToString(boolVal) {
+    if (boolVal == true) {
+        return "True"
     }
     else {
-        return "No"
+        return "False"
     }
 }

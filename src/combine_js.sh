@@ -15,7 +15,7 @@ java -jar yuicompressor-2.4.7.jar temp.js -o temp2.js
 rm temp.js
 
 # Append the header to top of final file
-echo "/* OSRSBOX Tooltips */\n/* Date: 2017/12/23 */\n/* Author: PH01L */\n/* Website: osrsbox.com */\n/* License: MIT */\n/* Dependencies: JQuery UI CSS (included license below) */" > osrsbox-tooltips.js
+echo -ne "/* OSRSBOX Tooltips */\n/* Date: 2017/12/23 */\n/* Author: PH01L */\n/* Website: osrsbox.com */\n/* License: MIT */\n/* Dependencies: JQuery UI CSS (included license below) */" > osrsbox-tooltips.js
 
 # Append minified CSS files
 cat temp2.js >> osrsbox-tooltips.js
