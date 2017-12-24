@@ -72,6 +72,22 @@ table.osrs-tooltip-table td {
 .ui-helper-hidden-accessible { display:none; }
 
 .osrs-tooltip {
+    display: inline-block;
+    position: static;
+    white-space:normal;
     font-weight: bold;
     color: #ff981f;
+    opacity: 100;
+}
+
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
 }
