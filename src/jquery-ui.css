@@ -90,13 +90,13 @@
 	width: 100%;
 	height: 100%;
 }
-.ui-tooltip {
+.ui-osrstooltip {
 	padding: 8px;
 	position: absolute;
 	z-index: 9999;
 	max-width: 300px;
 }
-body .ui-tooltip {
+body .ui-osrstooltip {
 	border-width: 2px;
 }
 

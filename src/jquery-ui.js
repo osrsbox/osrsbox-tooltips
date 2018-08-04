@@ -1739,11 +1739,11 @@ var uniqueId = $.fn.extend( {
 
 
 
-$.widget( "ui.tooltip", {
+$.widget( "ui.osrstooltip", {
 	version: "1.12.1",
 	options: {
 		classes: {
-			"ui-tooltip": "ui-corner-all ui-widget-shadow"
+			"ui-osrstooltip": "ui-corner-all ui-widget-shadow"
 		},
 		content: function() {
 
@@ -1775,12 +1775,12 @@ $.widget( "ui.tooltip", {
 		var describedby = ( elem.attr( "aria-describedby" ) || "" ).split( /\s+/ );
 		describedby.push( id );
 		elem
-			.data( "ui-tooltip-id", id )
+			.data( "ui-osrstooltip-id", id )
 			.attr( "aria-describedby", $.trim( describedby.join( " " ) ) );
 	},
 
 	_removeDescribedBy: function( elem ) {
-		var id = elem.data( "ui-tooltip-id" ),
+		var id = elem.data( "ui-osrstooltip-id" ),
 			describedby = ( elem.attr( "aria-describedby" ) || "" ).split( /\s+/ ),
 			index = $.inArray( id, describedby );
 
@@ -1788,7 +1788,7 @@ $.widget( "ui.tooltip", {
 			describedby.splice( index, 1 );
 		}
 
-		elem.removeData( "ui-tooltip-id" );
+		elem.removeData( "ui-osrstooltip-id" );
 		describedby = $.trim( describedby.join( " " ) );
 		if ( describedby ) {
 			elem.attr( "aria-describedby", describedby );
@@ -1804,7 +1804,7 @@ $.widget( "ui.tooltip", {
 		} );
 
 		// IDs of generated tooltips, needed for destroy
-		this.tooltips = {};
+		this.osrstooltips = {};
 
 		// IDs of parent tooltips where we removed the title attribute
 		this.parents = {};
@@ -1828,8 +1828,8 @@ $.widget( "ui.tooltip", {
 		this._super( key, value );
 
 		if ( key === "content" ) {
-			$.each( this.tooltips, function( id, tooltipData ) {
-				that._updateContent( tooltipData.element );
+			$.each( this.osrstooltips, function( id, osrstooltipData ) {
+				that._updateContent( osrstooltipData.element );
 			} );
 		}
 	},
@@ -1842,9 +1842,9 @@ $.widget( "ui.tooltip", {
 		var that = this;
 
 		// Close open tooltips
-		$.each( this.tooltips, function( id, tooltipData ) {
+		$.each( this.osrstooltips, function( id, osrstooltipData ) {
 			var event = $.Event( "blur" );
-			event.target = event.currentTarget = tooltipData.element[ 0 ];
+			event.target = event.currentTarget = osrstooltipData.element[ 0 ];
 			that.close( event, true );
 		} );
 
@@ -1855,7 +1855,7 @@ $.widget( "ui.tooltip", {
 					var element = $( this );
 					if ( element.is( "[title]" ) ) {
 						return element
-							.data( "ui-tooltip-title", element.attr( "title" ) )
+							.data( "ui-osrstooltip-title", element.attr( "title" ) )
 							.removeAttr( "title" );
 					}
 				} )
@@ -1867,8 +1867,8 @@ $.widget( "ui.tooltip", {
 		// restore title attributes
 		this.disabledTitles.each( function() {
 			var element = $( this );
-			if ( element.data( "ui-tooltip-title" ) ) {
-				element.attr( "title", element.data( "ui-tooltip-title" ) );
+			if ( element.data( "ui-osrstooltip-title" ) ) {
+				element.attr( "title", element.data( "ui-osrstooltip-title" ) );
 			}
 		} );
 		this.disabledTitles = $( [] );
@@ -1883,22 +1883,22 @@ $.widget( "ui.tooltip", {
 				.closest( this.options.items );
 
 		// No element to show a tooltip for or the tooltip is already open
-		if ( !target.length || target.data( "ui-tooltip-id" ) ) {
+		if ( !target.length || target.data( "ui-osrstooltip-id" ) ) {
 			return;
 		}
 
 		if ( target.attr( "title" ) ) {
-			target.data( "ui-tooltip-title", target.attr( "title" ) );
+			target.data( "ui-osrstooltip-title", target.attr( "title" ) );
 		}
 
-		target.data( "ui-tooltip-open", true );
+		target.data( "ui-osrstooltip-open", true );
 
 		// Kill parent tooltips, custom or native, for hover
 		if ( event && event.type === "mouseover" ) {
 			target.parents().each( function() {
 				var parent = $( this ),
 					blurEvent;
-				if ( parent.data( "ui-tooltip-open" ) ) {
+				if ( parent.data( "ui-osrstooltip-open" ) ) {
 					blurEvent = $.Event( "blur" );
 					blurEvent.target = blurEvent.currentTarget = this;
 					that.close( blurEvent, true );
@@ -1936,7 +1936,7 @@ $.widget( "ui.tooltip", {
 			that._delay( function() {
 
 				// Ignore async response if tooltip was closed already
-				if ( !target.data( "ui-tooltip-open" ) ) {
+				if ( !target.data( "ui-osrstooltip-open" ) ) {
 					return;
 				}
 
@@ -1957,7 +1957,7 @@ $.widget( "ui.tooltip", {
 	},
 
 	_open: function( event, target, content ) {
-		var tooltipData, tooltip, delayedShow, a11yContent,
+		var osrstooltipData, osrstooltip, delayedShow, a11yContent,
 			positionOption = $.extend( {}, this.options.position );
 
 		if ( !content ) {
@@ -1966,9 +1966,9 @@ $.widget( "ui.tooltip", {
 
 		// Content can be updated multiple times. If the tooltip already
 		// exists, then just update the content and bail.
-		tooltipData = this._find( target );
-		if ( tooltipData ) {
-			tooltipData.tooltip.find( ".ui-tooltip-content" ).html( content );
+		osrstooltipData = this._find( target );
+		if ( osrstooltipData ) {
+			osrstooltipData.osrstooltip.find( ".ui-osrstooltip-content" ).html( content );
 			return;
 		}
 
@@ -1987,26 +1987,26 @@ $.widget( "ui.tooltip", {
 			}
 		}
 
-		tooltipData = this._tooltip( target );
-		tooltip = tooltipData.tooltip;
-		this._addDescribedBy( target, tooltip.attr( "id" ) );
-		tooltip.find( ".ui-tooltip-content" ).html( content );
+		osrstooltipData = this._osrstooltip( target );
+		osrstooltip = osrstooltipData.osrstooltip;
+		this._addDescribedBy( target, osrstooltip.attr( "id" ) );
+		osrstooltip.find( ".ui-osrstooltip-content" ).html( content );
 
 		// Support: Voiceover on OS X, JAWS on IE <= 9
 		// JAWS announces deletions even when aria-relevant="additions"
 		// Voiceover will sometimes re-read the entire log region's contents from the beginning
 		this.liveRegion.children().hide();
-		a11yContent = $( "<div>" ).html( tooltip.find( ".ui-tooltip-content" ).html() );
+		a11yContent = $( "<div>" ).html( osrstooltip.find( ".ui-osrstooltip-content" ).html() );
 		a11yContent.removeAttr( "name" ).find( "[name]" ).removeAttr( "name" );
 		a11yContent.removeAttr( "id" ).find( "[id]" ).removeAttr( "id" );
 		a11yContent.appendTo( this.liveRegion );
 
 		function position( event ) {
 			positionOption.of = event;
-			if ( tooltip.is( ":hidden" ) ) {
+			if ( osrstooltip.is( ":hidden" ) ) {
 				return;
 			}
-			tooltip.position( positionOption );
+			osrstooltip.position( positionOption );
 		}
 		if ( this.options.track && event && /^mouse/.test( event.type ) ) {
 			this._on( this.document, {
@@ -2016,14 +2016,14 @@ $.widget( "ui.tooltip", {
 			// trigger once to override element-relative positioning
 			position( event );
 		} else {
-			tooltip.position( $.extend( {
+			osrstooltip.position( $.extend( {
 				of: target
 			}, this.options.position ) );
 		}
 
-		tooltip.hide();
+		osrstooltip.hide();
 
-		this._show( tooltip, this.options.show );
+		this._show( osrstooltip, this.options.show );
 
 		// Handle tracking tooltips that are shown with a delay (#8644). As soon
 		// as the tooltip is visible, position the tooltip using the most recent
@@ -2031,14 +2031,14 @@ $.widget( "ui.tooltip", {
 		// Adds the check to add the timers only when both delay and track options are set (#14682)
 		if ( this.options.track && this.options.show && this.options.show.delay ) {
 			delayedShow = this.delayedShow = setInterval( function() {
-				if ( tooltip.is( ":visible" ) ) {
+				if ( osrstooltip.is( ":visible" ) ) {
 					position( positionOption.of );
 					clearInterval( delayedShow );
 				}
 			}, $.fx.interval );
 		}
 
-		this._trigger( "open", event, { tooltip: tooltip } );
+		this._trigger( "open", event, { osrstooltip: osrstooltip } );
 	},
 
 	_registerCloseHandlers: function( event, target ) {
@@ -2056,7 +2056,7 @@ $.widget( "ui.tooltip", {
 		// tooltips will handle this in destroy.
 		if ( target[ 0 ] !== this.element[ 0 ] ) {
 			events.remove = function() {
-				this._removeTooltip( this._find( target ).tooltip );
+				this._removeosrsTooltip( this._find( target ).osrstooltip );
 			};
 		}
 
@@ -2070,27 +2070,27 @@ $.widget( "ui.tooltip", {
 	},
 
 	close: function( event ) {
-		var tooltip,
+		var osrstooltip,
 			that = this,
 			target = $( event ? event.currentTarget : this.element ),
-			tooltipData = this._find( target );
+			osrstooltipData = this._find( target );
 
 		// The tooltip may already be closed
-		if ( !tooltipData ) {
+		if ( !osrstooltipData ) {
 
 			// We set ui-tooltip-open immediately upon open (in open()), but only set the
 			// additional data once there's actually content to show (in _open()). So even if the
 			// tooltip doesn't have full data, we always remove ui-tooltip-open in case we're in
 			// the period between open() and _open().
-			target.removeData( "ui-tooltip-open" );
+			target.removeData( "ui-osrstooltip-open" );
 			return;
 		}
 
-		tooltip = tooltipData.tooltip;
+		osrstooltip = osrstooltipData.osrstooltip;
 
 		// Disabling closes the tooltip, so we need to track when we're closing
 		// to avoid an infinite loop in case the tooltip becomes disabled on close
-		if ( tooltipData.closing ) {
+		if ( osrstooltipData.closing ) {
 			return;
 		}
 
@@ -2099,19 +2099,19 @@ $.widget( "ui.tooltip", {
 
 		// Only set title if we had one before (see comment in _open())
 		// If the title attribute has changed since open(), don't restore
-		if ( target.data( "ui-tooltip-title" ) && !target.attr( "title" ) ) {
-			target.attr( "title", target.data( "ui-tooltip-title" ) );
+		if ( target.data( "ui-osrstooltip-title" ) && !target.attr( "title" ) ) {
+			target.attr( "title", target.data( "ui-osrstooltip-title" ) );
 		}
 
 		this._removeDescribedBy( target );
 
-		tooltipData.hiding = true;
-		tooltip.stop( true );
-		this._hide( tooltip, this.options.hide, function() {
-			that._removeTooltip( $( this ) );
+		osrstooltipData.hiding = true;
+		osrstooltip.stop( true );
+		this._hide( osrstooltip, this.options.hide, function() {
+			that._removeosrsTooltip( $( this ) );
 		} );
 
-		target.removeData( "ui-tooltip-open" );
+		target.removeData( "ui-osrstooltip-open" );
 		this._off( target, "mouseleave focusout keyup" );
 
 		// Remove 'remove' binding only on delegated targets
@@ -2127,37 +2127,37 @@ $.widget( "ui.tooltip", {
 			} );
 		}
 
-		tooltipData.closing = true;
-		this._trigger( "close", event, { tooltip: tooltip } );
-		if ( !tooltipData.hiding ) {
-			tooltipData.closing = false;
+		osrstooltipData.closing = true;
+		this._trigger( "close", event, { osrstooltip: osrstooltip } );
+		if ( !osrstooltipData.hiding ) {
+			osrstooltipData.closing = false;
 		}
 	},
 
-	_tooltip: function( element ) {
-		var tooltip = $( "<div>" ).attr( "role", "tooltip" ),
-			content = $( "<div>" ).appendTo( tooltip ),
-			id = tooltip.uniqueId().attr( "id" );
+	_osrstooltip: function( element ) {
+		var osrstooltip = $( "<div>" ).attr( "role", "osrstooltip" ),
+			content = $( "<div>" ).appendTo( osrstooltip ),
+			id = osrstooltip.uniqueId().attr( "id" );
 
-		this._addClass( content, "ui-tooltip-content" );
-		this._addClass( tooltip, "ui-tooltip", "ui-widget ui-widget-content" );
+		this._addClass( content, "ui-osrstooltip-content" );
+		this._addClass( osrstooltip, "ui-osrstooltip", "ui-widget ui-widget-content" );
 
-		tooltip.appendTo( this._appendTo( element ) );
+		osrstooltip.appendTo( this._appendTo( element ) );
 
-		return this.tooltips[ id ] = {
+		return this.osrstooltips[ id ] = {
 			element: element,
-			tooltip: tooltip
+			osrstooltip: osrstooltip
 		};
 	},
 
 	_find: function( target ) {
-		var id = target.data( "ui-tooltip-id" );
-		return id ? this.tooltips[ id ] : null;
+		var id = target.data( "ui-osrstooltip-id" );
+		return id ? this.osrstooltips[ id ] : null;
 	},
 
-	_removeTooltip: function( tooltip ) {
-		tooltip.remove();
-		delete this.tooltips[ tooltip.attr( "id" ) ];
+	_removeosrsTooltip: function( osrstooltip ) {
+		osrstooltip.remove();
+		delete this.osrstooltips[ osrstooltip.attr( "id" ) ];
 	},
 
 	_appendTo: function( target ) {
@@ -2174,11 +2174,11 @@ $.widget( "ui.tooltip", {
 		var that = this;
 
 		// Close open tooltips
-		$.each( this.tooltips, function( id, tooltipData ) {
+		$.each( this.osrstooltips, function( id, osrstooltipData ) {
 
 			// Delegate to close method to handle common cleanup
 			var event = $.Event( "blur" ),
-				element = tooltipData.element;
+				element = osrstooltipData.element;
 			event.target = event.currentTarget = element[ 0 ];
 			that.close( event, true );
 
@@ -2187,13 +2187,13 @@ $.widget( "ui.tooltip", {
 			$( "#" + id ).remove();
 
 			// Restore the title
-			if ( element.data( "ui-tooltip-title" ) ) {
+			if ( element.data( "ui-osrstooltip-title" ) ) {
 
 				// If the title attribute has changed since open(), don't restore
 				if ( !element.attr( "title" ) ) {
-					element.attr( "title", element.data( "ui-tooltip-title" ) );
+					element.attr( "title", element.data( "ui-osrstooltip-title" ) );
 				}
-				element.removeData( "ui-tooltip-title" );
+				element.removeData( "ui-osrstooltip-title" );
 			}
 		} );
 		this.liveRegion.remove();
@@ -2205,21 +2205,21 @@ $.widget( "ui.tooltip", {
 if ( $.uiBackCompat !== false ) {
 
 	// Backcompat for tooltipClass option
-	$.widget( "ui.tooltip", $.ui.tooltip, {
+	$.widget( "ui.osrstooltip", $.ui.osrstooltip, {
 		options: {
-			tooltipClass: null
+			osrstooltipClass: null
 		},
-		_tooltip: function() {
-			var tooltipData = this._superApply( arguments );
-			if ( this.options.tooltipClass ) {
-				tooltipData.tooltip.addClass( this.options.tooltipClass );
+		_osrstooltip: function() {
+			var osrstooltipData = this._superApply( arguments );
+			if ( this.options.osrstooltipClass ) {
+				osrstooltipData.osrstooltip.addClass( this.options.osrstooltipClass );
 			}
-			return tooltipData;
+			return osrstooltipData;
 		}
 	} );
 }
 
-var widgetsTooltip = $.ui.tooltip;
+var widgetsosrsTooltip = $.ui.osrstooltip;
 
 
 /*!

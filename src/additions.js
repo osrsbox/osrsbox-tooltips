@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-    $( document ).tooltip(); // initialize tooltip
+    $( document ).osrstooltip(); // initialize tooltip
 
-    $( ".tooltip" ).tooltip({
+    $( ".osrstooltip" ).osrstooltip({
         track:true,
         open: function( event, ui ) {
               var item_id = this.id;
@@ -20,11 +20,11 @@ $(document).ready(function(){
         }
     });
 
-    $(".tooltip").mouseout(function(){
+    $(".osrstooltip").mouseout(function(){
         // re-initializing tooltip
         $(this).attr('title','Please wait...');
-        $(this).tooltip();
-        $('.ui-tooltip').hide();
+        $(this).osrstooltip();
+        $('.ui-osrstooltip').hide();
     });   
 });
 
@@ -50,7 +50,7 @@ function successFunction(data) {
 
     if (data['equipable'] == false) {
         theContent = "<div>" + header + clear + properties + clear + "</div>";
-        $("#" + data["id"]).tooltip('option', 'content', theContent);
+        $("#" + data["id"]).osrstooltip('option', 'content', theContent);
         return
     }    
     
@@ -63,11 +63,11 @@ function successFunction(data) {
     var other_bonuses_table = "<tr><th colspan='4'>Other Bonuses</th></tr><tr><td><img src='https://www.osrsbox.com/osrsbox-tooltips/images/melee_strength.png' alt=''></td><td><img src='https://www.osrsbox.com/osrsbox-tooltips/images/ranged_strength.png' alt=''></td><td><img src='https://www.osrsbox.com/osrsbox-tooltips/images/magic_damage.png' alt=''></td><td><img src='https://www.osrsbox.com/osrsbox-tooltips/images/prayer.png' alt=''></td></tr><tr><td>" + data["bonuses"]['melee_strength'] + "</td>" + "<td>" + data["bonuses"]['ranged_strength'] + "</td>" + "<td>" + data["bonuses"]['magic_damage'] + "</td>" + "<td>" + data["bonuses"]['prayer'] + "</td>" + "</tr></table>";  
 
     theContent = "<div>" + header + clear + properties + clear + attack_table + defence_table + other_bonuses_table + "</div>";
-    $("#" + data["id"]).tooltip('option', 'content', theContent)
+    $("#" + data["id"]).osrstooltip('option', 'content', theContent)
 }
 
     function errorFunction(data) {
-        $("#" + data["id"]).tooltip('option', 'content', "Error getting content.")
+        $("#" + data["id"]).osrstooltip('option', 'content', "Error getting content.")
     }      
 
 function boolToString(boolVal) {

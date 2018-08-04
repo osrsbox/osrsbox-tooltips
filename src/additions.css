@@ -4,7 +4,7 @@
 }
 
 /* Override some (global) default JQuery tooltip styles */
-.ui-tooltip {
+.ui-osrstooltip {
     background-color: rgba(0, 0, 0, 0.8);
     color: #ff981f;
     font-family: osrs-font;
@@ -14,7 +14,7 @@
 }
 
 /* Pad the top of the tooltip */
-.ui-tooltip-content {
+.ui-osrstooltip-content {
     padding: 10px;
 }
 
