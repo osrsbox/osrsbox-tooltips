@@ -19,35 +19,35 @@
 }
 
 /* Control layout of top item image */
-.osrs-tooltip-image {
+.osrstooltip-image {
     float: left;
     padding: 0 5px 5px 0;
 }
 
 /* Control layout of top item name (e.g., Abysall Whip) */
-.osrs-tooltip-name {
+.osrstooltip-name {
     float: right;
     font-size: 1.1em;
     padding: 5px 0 0 0;
 }
 
 /* Clear previous float layouts */
-.osrs-tooltip-clear {
+.osrstooltip-clear {
     clear: both;
 }
 
 /* Control layout of text properties (e.g., Stackable, Tradeable) */
-.osrs-tooltip-textleft {
+.osrstooltip-textleft {
     float: left;
 }
 
 /* Control layout of text propertie value (e.g., Yes, No, Price etc.) */
-.osrs-tooltip-textright {
+.osrstooltip-textright {
     float: right;
 }
 
 /* Control layout of the item stats table */
-.osrs-tooltip-table {
+.osrstooltip-table {
     font-style: normal;
     font-size: 1em;
     text-align:center;	
@@ -58,8 +58,8 @@
 }
 
 /* Control layout of the item stats table HEADERS */
-table.osrs-tooltip-table th,
-table.osrs-tooltip-table td {
+table.osrstooltip-table th,
+table.osrstooltip-table td {
     border: 1px solid #ff981f;
     filter: alpha(opacity=40);
     background-color: rgba(0, 0, 0, 0.8);
@@ -71,7 +71,7 @@ table.osrs-tooltip-table td {
 /* Do not display the UI Helper */
 .ui-helper-hidden-accessible { display:none; }
 
-.osrs-tooltip {
+.osrstooltip {
     display: inline-block;
     position: static;
     white-space:normal;
