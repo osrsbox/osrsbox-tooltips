@@ -1,4 +1,4 @@
 # osrsbox-tooltips
 ## An Old School Runescape (OSRS) Tooltip library
 
-For more information see: http://osrsbox.com/osrs-tooltips/
+For more information see: https://www.osrsbox.com/projects/osrsbox-tooltips/
