@@ -16,7 +16,7 @@ Remove-Item .\temp.js
 
 # Static header for new JS file
 $header = "/*! OSRSBOX Tooltips
-*   Date: 27/05/2017
+*   Date: 2018/11/11
 *   Author: PH01L
 *   Website: osrsbox.com
 *   License: MIT
@@ -28,7 +28,7 @@ $header = "/*! OSRSBOX Tooltips
 $file = Get-Content .\osrsbox-tooltips.js
 
 # Append the header to top of final file
-Set-Content .\osrsbox-tooltips.js –value $header, $file
+Set-Content .\osrsbox-tooltips.js -value $header, $file
 
 # Move final file to parent directory
 Move-Item -Path .\osrsbox-tooltips.js -Destination ..\docs\.\osrsbox-tooltips.js -force
