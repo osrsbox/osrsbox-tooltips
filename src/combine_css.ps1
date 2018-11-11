@@ -35,20 +35,20 @@ $file = Get-Content .\osrsbox-tooltips.css
 # Append the header to top of final file
 Set-Content .\osrsbox-tooltips.css -value $header, $file
 
-# Get the file hash of osrsbox-tooltips.css
-$filePath = "osrsbox-tooltips.css"
-$hasher = [System.Security.Cryptography.SHA384]::Create()
-$content = Get-Content -Encoding byte $filePath
-$hash = [System.Convert]::ToBase64String($hasher.ComputeHash($content))
-
 # Set the output file name with versioning
 $output_filename = "osrsbox-tooltips_" + $current_version + ".min.css"
-
-# Document SHA384 hash value in Base64
-Write-Output ($output_filename + ": " + "sha386-" + $hash)
 
 # Move final file to parent directory
 Move-Item -Path .\osrsbox-tooltips.css -Destination ..\docs\.\$output_filename -force
 
 # Also create a normal file without versioning (for legacy applications)
 Copy-Item -Path ..\docs\.\$output_filename -Destination ..\docs\.\osrsbox-tooltips.css -force
+
+# Get the file hash of osrsbox-tooltips.css
+$filePath = "..\docs\.\$output_filename"
+$hasher = [System.Security.Cryptography.SHA384]::Create()
+$content = Get-Content -Encoding byte $filePath
+$hash = [System.Convert]::ToBase64String($hasher.ComputeHash($content))
+
+# Document SHA384 hash value in Base64
+Write-Output ($output_filename + ": " + "sha384-" + $hash)
