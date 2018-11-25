@@ -2,16 +2,12 @@
 <html>
 <head>
 	<title>OSRSBOX | Simple HTML Example using OSRS Tooltips by PH01L</title>
-    <!-- External links to osrsbox-tooltip library (JS and CSS) -->
-	<link href="https://www.osrsbox.com/osrsbox-tooltips/osrsbox-tooltips_1.0.1.min.css"         
-		  rel="stylesheet" 
-		  type="text/css"
-		  integrity="sha384-bUjVH4I2aPPG3r1ojBg9f71hzUuRxEaKMAqhfxS962eSdOGFHgQStHs38j3x3yXP"
-          crossorigin="anonymous">
-	<script src="https://www.osrsbox.com/osrsbox-tooltips/osrsbox-tooltips_1.0.1.min.js"
-			integrity="sha384-Qj8BrtzqT2/gym+3nSEDrdvjG+Gscse+OzXunxhji+C4tgkkF71ZzMNNdDUTcsYz"
-			crossorigin="anonymous">
-	</script>
+	<!-- External links to osrsbox-tooltip library (JS and CSS) -->
+	<link href="../src/jquery-ui.css" rel="stylesheet" type="text/css">
+	<link href="../src/additions.css" rel="stylesheet" type="text/css">
+	<script src="../src/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="../src/jquery-ui.js" type="text/javascript"></script>
+	<script src="../src/additions.js" type="text/javascript"></script>
 </head>
 <body>
 	<h3>Full Tooltip Example: data-type="full"</h3>
@@ -24,5 +20,7 @@
 	<span class="osrstooltip" id='2621' data-type="bonuses" title='Please wait ...'>[Rune kiteshield (g)]</span>
 	<h3>Image full Tooltip Example: data-type="full"</h3>
 	<span class="osrstooltip" id='3476' data-type="full" title='Please wait ...'><img class="" src="https://www.osrsbox.com/osrsbox-db/items-icons/3476.png"></span>
+	<h3>Broken a href example</h3>
+	<a title="Meow" href="http://google.com">Test</a>
 </body>
 </html>
