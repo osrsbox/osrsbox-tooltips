@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-    $( document ).osrstooltip(); // initialize tooltip
-
+    // Initialize the tooltip
     $( ".osrstooltip" ).osrstooltip({
         track:true,
         open: function( event, ui ) {
