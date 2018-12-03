@@ -6,14 +6,14 @@
 # Copy "yuicompressor-2.4.7.jar" to same folder as this script
 
 # Variable for the current project version and date last edited
-$current_version = "1.0.1"
-$current_date = "2018/11/11"
+$current_version = "1.0.3"
+$current_date = "2018/12/04"
 
 # Combine all CSS files to temp.css
 cat jquery-ui.css, additions.css | sc temp.css
 
 # Minify the temp.css file using YUI Compressor
-java -jar .\yuicompressor-2.4.7.jar .\temp.css -o .\osrsbox-tooltips.css
+java -jar .\yuicompressor-2.4.8.jar .\temp.css -o .\osrsbox-tooltips.css
 
 # Remove the temp.css file
 Remove-Item .\temp.css
@@ -33,7 +33,7 @@ $header = "/* OSRSBOX Tooltips
 $file = Get-Content .\osrsbox-tooltips.css
 
 # Append the header to top of final file
-Set-Content .\osrsbox-tooltips.css -value $header, $file
+Set-Content -NoNewline .\osrsbox-tooltips.css -value $header, $file
 
 # Set the output file name with versioning
 $output_filename = "osrsbox-tooltips_" + $current_version + ".min.css"
