@@ -79,3 +79,7 @@ table.osrstooltip-table td {
     color: #ff981f;
     opacity: 100;
 }
+
+.osrstooltip:hover {
+    cursor: default;
+}
