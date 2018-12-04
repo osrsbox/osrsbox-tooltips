@@ -30,10 +30,6 @@ function successFunction(data) {
     var theContent = ""
 
     // Reusable variables
-    var left = "<span class='item_left'>";
-    var right = "<span class='item_right'>";
-    var endSpan = "</span>";
-    var aBreak = "<br/>";
     var clear = "<div class='osrstooltip-clear'></div>";
 
     // Construct tooltip header (item image and name)
