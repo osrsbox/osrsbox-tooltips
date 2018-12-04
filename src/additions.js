@@ -51,7 +51,6 @@ function successFunction(data) {
     var tooltip_type = article.dataset.type
     var valid_types = Object.freeze(["full", "half", "short", "bonuses"])
     if (valid_types.indexOf(tooltip_type) === -1) {
-        console.log("ERROR: Incorrect tooltip type")
         tooltip_type = "full";
     }
 
